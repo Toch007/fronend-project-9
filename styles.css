@@ -205,4 +205,5 @@ input.success {
 .form-text span {
   color: var(--clr-red);
   font-weight: var(--fw-4);
+  display: inline-block;
 }
