@@ -43,7 +43,7 @@ form.addEventListener("submit", (e) => {
 
 function errorFunc(req, message) {
   const formControl = req.parentElement;
-  const spans = formControl.querySelectorAll("span:not(:last-child)");
+  const spans = formControl.querySelectorAll("span");
   const inputs = formControl.querySelectorAll("input");
   const validText = "email@example.com";
   spans.forEach((span) => {
