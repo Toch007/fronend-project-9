@@ -218,5 +218,8 @@ input.success {
   color: var(--clr-red);
   font-weight: var(--fw-4);
   display: inline-block;
+<<<<<<< HEAD
   text-decoration: none;
+=======
+>>>>>>> c3fb0fd86b17b13f3802f3a4303661928c5c2ad0
 }
