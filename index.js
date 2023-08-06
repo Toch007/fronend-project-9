@@ -4,6 +4,22 @@ const lastName = document.getElementById("lastname");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 
+firstName.addEventListener("focus", () => {
+  resetForm(firstName);
+});
+
+lastName.addEventListener("focus", () => {
+  resetForm(lastName);
+});
+
+email.addEventListener("focus", () => {
+  resetForm(email);
+});
+
+password.addEventListener("focus", () => {
+  resetForm(password);
+});
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -41,6 +57,10 @@ form.addEventListener("submit", (e) => {
   }
 });
 
+form.addEventListener('click', e => {
+
+})
+
 function errorFunc(req, message) {
   const formControl = req.parentElement;
   const spans = formControl.querySelectorAll("span");
@@ -60,7 +80,24 @@ function errorFunc(req, message) {
   req.classList.add("error");
 }
 
+function resetForm(input) {
+  const formControl = input.parentElement;
+  const spans = formControl.querySelectorAll("span");
+  const validText = "email@example.com";
+
+  spans.forEach((span) => {
+    span.innerText = "";
+    span.classList.remove("error-message");
+  });
+
+  // Reset the placeholders, do not clear the values
+  //input.placeholder = input.getAttribute("data-placeholder");
+
+  input.classList.remove("error");
+}
+
 function successFunc(req) {
+  alert("Form submitted successfully!");
   req.classList.remove("error");
   req.classList.remove("error-message");
   req.classList.add("success");
@@ -69,4 +106,6 @@ function successFunc(req) {
   lastName.placeholder = "Last Name";
   email.placeholder = "Email";
   password.placeholder = "Password";
+
+  
 }
